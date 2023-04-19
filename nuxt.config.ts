@@ -5,5 +5,7 @@ export default defineNuxtConfig({
     "@nuxt/image-edge",
     "@vueuse/nuxt",
     "@pinia/nuxt",
+    "@pinia-plugin-persistedstate/nuxt",
   ],
+  css: ["@/assets/scss/style.scss"],
 });

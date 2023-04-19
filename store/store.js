@@ -1,20 +1,37 @@
-// store/filters.ts
 import { defineStore } from "pinia";
+import { useLocalStorage } from "@vueuse/core";
 
-export const useFiltersStore = defineStore({
-  id: "filterStore",
+export const useLikedCar = defineStore("isLikedCar", {
   state: () => ({
-    filtersList: [],
+    likes: useLocalStorage("likes", []),
   }),
   actions: {
-    addValueToFilterList(obj) {
-      this.filtersList.push(obj);
+    addCarStatus(obj) {
+      const wyniki = this.likes.filter((item) => item.id === obj.id);
+      if (wyniki.length === 0) {
+        this.likes.push(obj);
+      } else {
+        this.deleteCarStatus(obj.id);
+      }
     },
-    changeIsLike(id) {
-      console.log(id);
+    deleteCarStatus(id) {
+      this.likes = this.likes.filter((like) => {
+        return like.id !== id;
+      });
+    },
+    getSingleLike(id) {
+      return this.likes.find((like) => like.id === id);
     },
   },
+
   getters: {
-    filtersList: (state) => state.filtersList,
+    totalLikes: (state) => {
+      return state.likes.length;
+    },
+    allLikes: (state) => {
+      return state.likes;
+    },
   },
+
+  persist: true,
 });
