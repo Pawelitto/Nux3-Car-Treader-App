@@ -10,6 +10,7 @@ function toTitleCase(string) {
 </script>
 <template>
   <div>
-    <CarCards />
+    <!--    <CarCards />-->
+    <CarLikedcars />
   </div>
 </template>

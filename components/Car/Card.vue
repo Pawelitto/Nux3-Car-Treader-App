@@ -14,7 +14,6 @@ const props = defineProps({
 const handleCardClick = () => {
   let obj = {
     id: props.car.id,
-    isLike: null,
   };
   likesStore.addCarStatus(obj);
 };
@@ -42,6 +41,7 @@ const handleCardClick = () => {
           <h1 class="text-2xl text-blue-700">{{ car.name }}</h1>
           <p class="text-gray-700">
             {{ car.description }}
+            <!--            {{ likesStore.allLikes }}-->
           </p>
         </div>
         <h1 class="mt-auto text-xl">${{ car.price }}</h1>
