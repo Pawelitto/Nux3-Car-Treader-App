@@ -2,6 +2,7 @@
     {
       "id": 1,
       "name": "Range Rover Sport",
+      "make": "Range Rover",
       "price": "84,777",
       "url": "https://www.carhelpcanada.com/wp-content/uploads/2019/12/2020-Range-Rover-Evoque-2.jpg",
       "seats": 5,
@@ -12,6 +13,7 @@
     {
       "id": 2,
       "name": "Rolls Royce Ghost",
+      "make": "Rolls Royce",
       "price": "455,000",
       "url": "https://robbreport.com/wp-content/uploads/2021/03/1-5.jpg?w=1000",
       "seats": 5,
@@ -22,6 +24,7 @@
     {
       "id": 3,
       "name": "Porsche Taycan",
+      "make": "Porsche",
       "price": "180,434",
       "url": "https://www.topgear.com/sites/default/files/cars-car/carousel/2021/02/pcgb20_1441_fine.jpg",
       "seats": 5,
@@ -32,6 +35,7 @@
   {
     "id": 4,
     "name": "Toyota Corolla",
+    "make": "Toyota",
     "price": "75,050",
     "url": "https://www.autocentrum.pl/ac-file/car-version/5c48b9ff57502ae8700df69c.jpg",
     "seats": 5,
@@ -47,6 +51,7 @@
   {
     "id": 5,
     "name": "Ford Mustang",
+    "make": "Ford",
     "price": "175,090",
     "url": "https://www.notebookcheck.pl/fileadmin/Notebooks/News/_nc3/Ford_Mustang_elektro_elektrisch.jpg",
     "seats": 4,
@@ -64,6 +69,7 @@
   {
     "id": 6,
     "name": "BMW X5",
+    "make": "BMW",
     "price": "190,407",
     "url": "https://images.ctfassets.net/uaddx06iwzdz/yMU6ZXvI61Gs4N1h88cwv/2cdac28f044e5faf6114a22c5106fa37/BMW-X5-G05-2021-xDrive45e-Hero.jpg",
     "seats": 7,
