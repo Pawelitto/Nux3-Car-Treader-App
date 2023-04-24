@@ -1,21 +1,29 @@
 <script setup>
 import { useLikedCar } from '@/store/store';
 import { storeToRefs } from 'pinia';
-import { watch } from '../../.nuxt/imports';
+import { byLikes, byMake, byFilters } from '~/composables/useFilters';
+
 const likesStore = useLikedCar();
 const { cars } = useCars();
 
-function filterCarsByLiked(cars, likes) {
-  const likedCarIds = likes.map((car) => car.id);
-  return cars.filter((car) => likedCarIds.includes(car.id));
-}
-
-const filteredCars = ref(filterCarsByLiked(cars, likesStore.allLikes));
+const filteredCars = ref(byLikes(cars, likesStore.allLikes));
 
 watch(
   () => likesStore.allLikes,
   () => {
-    filteredCars.value = filterCarsByLiked(cars, likesStore.allLikes);
+    filteredCars.value = byLikes(filteredCars.value, likesStore.allLikes);
+  }
+);
+
+watch(
+  () => likesStore.allFilters,
+  () => {
+    filteredCars.value = byMake(cars, likesStore.allFilters.make);
+    filteredCars.value = byLikes(filteredCars.value, likesStore.allLikes);
+    filteredCars.value = byFilters(
+      filteredCars.value,
+      likesStore.allFilters.price
+    );
   }
 );
 </script>

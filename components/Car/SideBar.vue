@@ -98,7 +98,7 @@ const onChangePrice = () => {
         <select
           class="text-center border rounded p-1 mb-4 text-black"
           v-model="make">
-          <option value="all">all</option>
+          <option value="All">All</option>
           <option v-for="make in makes">{{ make }}</option>
         </select>
         <button

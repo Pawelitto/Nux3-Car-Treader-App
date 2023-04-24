@@ -11,6 +11,8 @@
     "@nuxt/image-edge": "^1.0.0-28020728.5df24eb",
     "fibers": "^5.0.3",
     "nuxt": "3.4.1",
+    "sass": "^1.62.0",
+    "sass-loader": "^10.4.1",
     "typescript": "^5.0.4"
   },
   "dependencies": {
@@ -21,7 +23,6 @@
     "@pinia/nuxt": "^0.4.8",
     "@vueuse/nuxt": "^10.0.2",
     "prettier": "^2.8.7",
-    "sass": "^1.62.0",
     "usemodal-vue3": "^0.3.7"
   }
 }

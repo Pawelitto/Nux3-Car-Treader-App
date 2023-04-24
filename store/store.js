@@ -5,7 +5,11 @@ export const useLikedCar = defineStore('isLikedCar', {
   state: () => {
     return {
       likes: useLocalStorage('likes', []),
-      filters: useLocalStorage('filters', { location: '', make: '', price: 0 }),
+      filters: useLocalStorage('filters', {
+        location: '',
+        make: 'All',
+        price: 'set',
+      }),
     };
   },
   actions: {

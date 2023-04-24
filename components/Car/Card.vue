@@ -28,12 +28,12 @@ const handleCardClick = () => {
       <NuxtImg :src="car.url" alt="" class="w-[300px] h-full" />
       <div class="p-4 flex flex-col w-[600px]">
         <div>
-          <h1 class="text-2xl text-blue-700">{{ car.name }}</h1>
+          <h2 class="text-2xl text-blue-700">{{ car.name }}</h2>
           <p class="text-gray-700">
             {{ car.description }}
           </p>
         </div>
-        <h1 class="mt-auto text-xl">${{ car.price }}</h1>
+        <h2 class="mt-auto text-xl">${{ car.price }}</h2>
       </div>
     </div>
   </div>
