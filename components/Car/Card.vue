@@ -24,12 +24,8 @@ const handleCardClick = () => {
       class="absolute w-7 right-5 top-2 z-20"
       alt="serduszko"
       @click="handleCardClick()" />
-    <div class="flex h-full">
-      <NuxtImg
-        :src="car.url"
-        alt=""
-        class="w-[300px] h-full"
-        @click="navigateTo(`/car/${car.name}-${car.id}`)" />
+    <div class="flex h-full" @click="navigateTo(`/car/${car.name}-${car.id}`)">
+      <NuxtImg :src="car.url" alt="" class="w-[300px] h-full" />
       <div class="p-4 flex flex-col w-[600px]">
         <div>
           <h1 class="text-2xl text-blue-700">{{ car.name }}</h1>

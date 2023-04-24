@@ -1,7 +1,7 @@
 <script setup>
-import { useLikedCar } from "@/store/store";
-import { storeToRefs } from "pinia";
-import { watch } from "../../.nuxt/imports";
+import { useLikedCar } from '@/store/store';
+import { storeToRefs } from 'pinia';
+import { watch } from '../../.nuxt/imports';
 const likesStore = useLikedCar();
 const { cars } = useCars();
 
@@ -20,7 +20,7 @@ watch(
 );
 </script>
 <template>
-  <div class="w-full w-[602px]">
+  <div class="w-full">
     <p class="text-center" v-if="likesStore.totalLikes !== 0">
       Aktualnie przeglądasz
       <i>{{ likesStore.totalLikes }} polubione</i>

@@ -134,6 +134,6 @@ const onChangePrice = () => {
     </div>
     <!-- Price Modal END-->
     <!-- Debug info about active filters-->
-    {{ filterObj }}
+    <!-- {{ filterObj }} -->
   </div>
 </template>
