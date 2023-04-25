@@ -4,3 +4,6 @@
 4. Wyrównać na podstronie login dwa formularze - gotowe
 5. Zrobić walidację do formularzy logowania i carDetail - 
 6. Dodać animacje serca na card w cards - gotowe
+7. Stworzyć zapytania api pobierające dane - gotowe
+8. Dodać plik .env z zmiennymi środowiskowymi dot. api - gotowe
+9. Wyświetlić dane z api gdzies na stronie -  gotowe

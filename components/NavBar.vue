@@ -24,7 +24,6 @@ const likesStore = useLikedCar();
         class="w-10 cursor-pointer"
         alt="serce_licznik"
         @click="navigateTo('/car/fav')" />
-
       <!-- <svg
         xmlns="http://www.w3.org/2000/svg"
         width="1.5em"
