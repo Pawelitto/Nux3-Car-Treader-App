@@ -1,4 +1,5 @@
 <script setup>
+import heartOutline from '@/assets/heartOutline.png';
 import { useLikedCar } from '@/store/store';
 
 const likesStore = useLikedCar();
@@ -6,15 +7,25 @@ const likesStore = useLikedCar();
 <template>
   <header
     class="sticky top-0 z-50 flex justify-between items-center space-x-1 border-b bg-white p-4 shadow-md">
-    <NuxtLink class="text-3xl font-mono" to="/">cartreader</NuxtLink>
+    <NuxtLink class="text-3xl font-mono" to="/">carTreader</NuxtLink>
 
-    <div class="flex">
-      <NuxtLink class="text-1xl font-mono" to="/car/fav"
-        >Favourites(<span class="text-red-600">{{ likesStore.totalLikes }}</span
-        >)</NuxtLink
-      >
+    <div class="flex relative text-center">
+      <NuxtLink
+        class="serce absolute top-2/4 left-2/4 text-1xl font-mono"
+        to="/car/fav">
+        <Transition mode="out-in">
+          <span class="text-red-600" :key="likesStore.totalLikes">
+            {{ likesStore.totalLikes }}
+          </span>
+        </Transition>
+      </NuxtLink>
+      <img
+        :src="heartOutline"
+        class="w-10 cursor-pointer"
+        alt="serce_licznik"
+        @click="navigateTo('/car/fav')" />
 
-      <svg
+      <!-- <svg
         xmlns="http://www.w3.org/2000/svg"
         width="1.5em"
         height="1.5em"
@@ -22,7 +33,18 @@ const likesStore = useLikedCar();
         <path
           fill="currentColor"
           d="M8 7.83c-3.08 0-5.59 2.17-5.59 4.84V16h1.27v-3.33c0-2 1.94-3.57 4.32-3.57s4.32 1.6 4.32 3.57V16h1.27v-3.33c0-2.67-2.51-4.84-5.59-4.84zm.1-1.22a3.22 3.22 0 0 0 3.1-3.31A3.21 3.21 0 0 0 8.1 0A3.21 3.21 0 0 0 5 3.3a3.22 3.22 0 0 0 3.1 3.31zm0-5.32a1.92 1.92 0 0 1 1.81 2a1.93 1.93 0 0 1-1.81 2a1.93 1.93 0 0 1-1.8-2a1.92 1.92 0 0 1 1.8-2z"></path>
-      </svg>
+      </svg> -->
     </div>
   </header>
 </template>
+<style scoped>
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+</style>

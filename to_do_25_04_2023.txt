@@ -1,0 +1,6 @@
+1. Poprawić style serchbar'u na stronie glownej - zrobione
+2. Poprawić style navbar'u - gotowe
+3. Przesunąć guzik submit do prawej strony w carDetail - gotowe
+4. Wyrównać na podstronie login dwa formularze - gotowe
+5. Zrobić walidację do formularzy logowania i carDetail - 
+6. Dodać animacje serca na card w cards - gotowe

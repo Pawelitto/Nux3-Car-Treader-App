@@ -1,7 +1,4 @@
 <script setup>
-import heartFilled from '@/assets/heartFilled.png';
-import heartOutline from '@/assets/heartOutline.png';
-
 import { useLikedCar } from '@/store/store';
 import { storeToRefs } from 'pinia';
 
@@ -18,12 +15,14 @@ const handleCardClick = () => {
 <template>
   <div
     class="shadow border relative w-full overflow-hidden mb-5 cursor-pointer h-[200px]">
-    <!--    <div class="absolute bg-red-500">{{ likesStore.totalLikes }}</div>-->
-    <img
-      :src="likesStore.getSingleLike(car.id) ? heartFilled : heartOutline"
-      class="absolute w-7 right-5 top-2 z-20"
-      alt="serduszko"
-      @click="handleCardClick()" />
+    <div
+      class="absolute right-5 top-2 z-20"
+      :class="
+        likesStore.getSingleLike(car.id)
+          ? 'heart-like-button liked'
+          : 'heart-like-button'
+      "
+      @click="handleCardClick()"></div>
     <div class="flex h-full" @click="navigateTo(`/car/${car.name}-${car.id}`)">
       <NuxtImg :src="car.url" alt="" class="w-[300px] h-full" />
       <div class="p-4 flex flex-col w-[600px]">
