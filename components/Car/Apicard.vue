@@ -9,15 +9,17 @@ const props = defineProps({ car: Object });
 <template>
   <div
     class="shadow border relative w-full overflow-hidden mb-5 cursor-pointer h-[200px]">
-    <div class="flex h-full" @click="navigateTo(`/car/${car.car}-${car.id}`)">
+    <div
+      class="flex h-full"
+      @click="navigateTo(`/car/${car[1].car}-${car[1].id}`)">
       <div class="p-4 flex flex-col w-[600px]">
         <div>
-          <h2 class="text-2xl text-blue-700">{{ car.car }}</h2>
+          <h2 class="text-2xl text-blue-700">{{ car[1].car }}</h2>
           <p class="text-gray-700">
-            {{ car.car_model }}
+            {{ car[1].car_model }}
           </p>
         </div>
-        <h2 class="mt-auto text-xl">{{ car.price }}</h2>
+        <h2 class="mt-auto text-xl">{{ car[1].price }}</h2>
       </div>
     </div>
   </div>
