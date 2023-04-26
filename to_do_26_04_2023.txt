@@ -1,0 +1,4 @@
+1. Zrobić walidację do formularzy logowania i carDetail - 
+2. Paginacja - 
+3. Efekt ładowania w czasie ładowania danych - 
+4. Obsługa błędów w zapytaniu api 
