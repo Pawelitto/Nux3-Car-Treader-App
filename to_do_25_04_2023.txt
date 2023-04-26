@@ -1,9 +1,0 @@
-1. Poprawić style serchbar'u na stronie glownej - zrobione
-2. Poprawić style navbar'u - gotowe
-3. Przesunąć guzik submit do prawej strony w carDetail - gotowe
-4. Wyrównać na podstronie login dwa formularze - gotowe
-5. Zrobić walidację do formularzy logowania i carDetail - niezrobione
-6. Dodać animacje serca na card w cards - gotowe
-7. Stworzyć zapytania api pobierające dane - gotowe
-8. Dodać plik .env z zmiennymi środowiskowymi dot. api - gotowe
-9. Wyświetlić dane z api gdzies na stronie -  gotowe

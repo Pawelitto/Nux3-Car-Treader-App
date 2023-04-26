@@ -1,9 +1,5 @@
 <script setup>
-const { error, data: carsApi } = await useFetch(useRuntimeConfig().api_uri, {
-  token: useRuntimeConfig().api_secret_token,
-});
-// console.log(error.value.data);
-// console.log(error.value.name, error.value.message);
+const { data: carsApi } = await useFetch('/api/cars');
 </script>
 <template>
   <div class="w-full">
