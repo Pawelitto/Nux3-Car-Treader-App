@@ -1,21 +1,37 @@
 <script setup>
 import { Icon } from '@iconify/vue';
+
 const props = defineProps({
   page: Object,
   info: Object,
   distance: Object,
+  totalPages: Number,
   currPage: { type: Number, required: true },
 });
+
+const tabPag = ref([1, 2, 3]);
+
 const emit = defineEmits(['nazwaEmita']);
+
 function buttonClick(pageNumber) {
+  if (pageNumber === 1) {
+    tabPag.value[0] = 1;
+    tabPag.value[1] = 2;
+    tabPag.value[2] = 3;
+  }
+  if (pageNumber >= 3) {
+    tabPag.value[0] = pageNumber - 1;
+    tabPag.value[1] = pageNumber;
+    tabPag.value[2] = pageNumber + 1;
+  }
+  if (pageNumber <= totalPages.value - 3) {
+    tabPag.value[0] = pageNumber - 1;
+    tabPag.value[1] = pageNumber;
+    tabPag.value[2] = pageNumber + 1;
+  }
+
   emit('nazwaEmita', pageNumber);
 }
-// watch(
-//   () => props.currPage.value,
-//   () => {
-//     console.log('Dziecko aktywna: ' + props.currPage.value);
-//   }
-// );
 </script>
 <template>
   <div
@@ -36,19 +52,60 @@ function buttonClick(pageNumber) {
         <nav
           class="isolate inline-flex -space-x-px rounded-md shadow-sm"
           aria-label="Pagination">
-          <button class="larrow" @click="buttonClick(currPage - 1)">
+          <button
+            class="larrow"
+            @click="buttonClick(currPage - 1)"
+            :disabled="currPage === 1">
             <Icon icon="system-uicons:chevron-left" />
           </button>
-          <template v-for="index in 3" :key="index">
-            <button
-              class="pagination-link"
-              :class="{ active: currPage === index }"
-              @click="buttonClick(index)">
-              {{ index }}
-            </button>
-          </template>
 
-          <button class="rarrow" @click="buttonClick(currPage + 1)">
+          <button
+            v-if="currPage >= 3"
+            class="pagination-link"
+            :class="{ active: currPage === 1 }"
+            @click="buttonClick(1)">
+            {{ 1 }}
+          </button>
+
+          <button v-if="currPage >= 3" class="dot" disabled>...</button>
+
+          <button
+            class="pagination-link"
+            :class="{ active: currPage === tabPag[0] }"
+            @click="buttonClick(tabPag[0])">
+            {{ tabPag[0] }}
+          </button>
+
+          <button
+            class="pagination-link"
+            :class="{ active: currPage === tabPag[1] }"
+            @click="buttonClick(tabPag[1])">
+            {{ tabPag[1] }}
+          </button>
+
+          <button
+            class="pagination-link"
+            :class="{ active: currPage === tabPag[2] }"
+            v-if="currPage !== totalPages"
+            @click="buttonClick(tabPag[2])">
+            {{ tabPag[2] }}
+          </button>
+          <button v-if="currPage <= totalPages - 2" class="dot" disabled>
+            ...
+          </button>
+
+          <button
+            class="pagination-link"
+            v-if="currPage <= totalPages - 2"
+            :class="{ active: currPage === totalPages }"
+            @click="buttonClick(totalPages)">
+            {{ totalPages }}
+          </button>
+
+          <button
+            class="rarrow"
+            @click="buttonClick(currPage + 1)"
+            :disabled="currPage === totalPages">
             <Icon icon="system-uicons:chevron-right" />
           </button>
         </nav>

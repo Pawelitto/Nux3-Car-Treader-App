@@ -6,9 +6,9 @@ import {
 } from '~/composables/usePagination';
 import json from '~/data/apiCars.json';
 
-// const { data: carsApi } = await useFetch('/api/cars');
+const { data: carsApi } = await useFetch('/api/cars');
 
-const carsApi = ref(json);
+// const carsApi = ref(json);
 
 const itemsPerPage = ref(10);
 const activePage = ref(1);
@@ -81,10 +81,12 @@ const nazwaFunkcji = (pageNumber) => {
 </script>
 <template>
   <div class="w-full">
+    <carSpinner v-if="!carsApi" />
     <CarApicard v-for="car in itemsActive" :key="car.id" :car="car" />
     <CarPagination
       :page="page"
       :info="info"
+      :totalPages="pagesTotal"
       :key="page.rows"
       :currPage="activePage"
       :distance="distance"

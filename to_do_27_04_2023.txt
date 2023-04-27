@@ -1,4 +1,4 @@
-1. Zrobić walidację do formularzy logowania i carDetail - 
+1. Zrobić walidację do formularzy logowania i carDetail - odkladam na pozniej bo jest problem z paczkami :(
 2. Paginacja - gotowe
 3. Efekt ładowania w czasie ładowania danych - 
 4. Obsługa błędów w zapytaniu api - 

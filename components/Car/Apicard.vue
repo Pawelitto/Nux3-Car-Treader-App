@@ -18,7 +18,7 @@ const props = defineProps({ car: Object });
           <p class="text-gray-700">
             {{ car[1].make }}
           </p>
-          <!-- <h4>{{ car[1].id }}</h4> -->
+          <h4>{{ car[1].id }}</h4>
         </div>
         <h2 class="mt-auto text-xl">${{ car[1].price }}</h2>
       </div>
