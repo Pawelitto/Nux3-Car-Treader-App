@@ -1,8 +1,9 @@
-@import 'login';
-@import 'heart';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import 'login';
+@import 'paginate';
+@import 'heart';
 @layer base {
   .container {
     @apply mx-auto;

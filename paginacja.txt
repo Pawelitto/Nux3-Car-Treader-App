@@ -1,0 +1,15 @@
+! wartosci ktorych potrzeba do dzialania:
+- ilosc itemow            =  gotowe
+- ilosc itemow na strone  =  gotowe
+- ilosc stron z itemami   =  gotowe
+- aktywna strona          =  gotowe
+- pokazywanie zakresu od ktorego itemu do ktorego itemu wlasnie sie znajdujemy = gotowe
+
+
+! Jakie dane przechodzą z RODZICA do DZIECKA:
+    - zakres 'distance'
+    - ilosc 'items'
+    - aktywna strona
+
+! Jakie dane przechodzą z DZIECKA do RODZICA:
+    - aktywna strona
