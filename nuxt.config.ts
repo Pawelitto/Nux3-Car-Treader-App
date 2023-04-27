@@ -9,6 +9,8 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
+    '@vuelidate/core',
+    '@vuelidate/validators',
   ],
   css: ['@/assets/scss/style.scss'],
 });
