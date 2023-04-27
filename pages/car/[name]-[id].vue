@@ -13,7 +13,7 @@ const car = computed(() => {
 });
 
 definePageMeta({
-  layout: 'custom',
+  layout: "custom",
 });
 
 if (!car.value) {
@@ -29,9 +29,9 @@ function toTitleCase(string) {
 </script>
 <template>
   <div v-if="car">
-    <!-- <CarDetailHero :car="car" /> -->
-    <!-- <CarDetailAttributes :features="car.features" /> -->
-    <!-- <CarDetailDescription :description="car.description" /> -->
+    <CarDetailHero :car="car" />
+    <CarDetailAttributes :features="car.features" />
+    <CarDetailDescription :description="car.description" />
     <CarDetailContact />
   </div>
 </template>

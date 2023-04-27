@@ -41,7 +41,6 @@ const info = ref({
 </script>
 <template>
   <div class="w-full">
-    <CarApicard v-for="car in first" :key="car.id" :car="car" />
-    <CarPagination :page="page" :info="info" :key="page.rows" />
+    <CarApicard v-for="car in carsApi.cars" :key="car.id" :car="car" />
   </div>
 </template>

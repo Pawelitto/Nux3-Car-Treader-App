@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   runtimeConfig: {
+    apiSecretToken: import.meta.env.NUXT_API_SECRET_TOKEN,
     apiBaseUrl: import.meta.env.NUXT_API_URI,
   },
   modules: [
@@ -9,8 +10,6 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
-    '@vuelidate/core',
-    '@vuelidate/validators',
   ],
   css: ['@/assets/scss/style.scss'],
 });
