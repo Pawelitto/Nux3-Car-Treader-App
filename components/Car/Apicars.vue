@@ -1,5 +1,4 @@
 <script setup>
-<<<<<<< HEAD
 import {
   totalPages,
   getPageItems,
@@ -35,86 +34,14 @@ const itemsActive = ref(
     itemsPerPage.value
   )
 );
-=======
-import { totalPages, getPageItems } from '~/composables/usePagination';
-
-const { data: carsApi } = await useFetch('/api/cars');
-
-const page = ref({
-  rows: Object.entries(carsApi.value.cars).length,
-  pagesTotal: 0,
-});
-
-const pagesTotal = ref(
-  totalPages(Object.entries(carsApi.value.cars).length, 10)
-);
-
-const first = getPageItems(Object.entries(carsApi.value.cars), 1, 10);
-
-page.value.pagesTotal = pagesTotal.value;
->>>>>>> 94022913b46ad916255fe34e4266142386553d55
 
 const info = ref({
   i: pagesTotal.value,
 });
-<<<<<<< HEAD
-
-const wyswietlanieTestowe = (activeP, pageRows, pagesT, distance, itemsPP) => {
-  console.log('=====');
-  getDistance(activeP, itemsPP);
-  console.log('Aktywna strona: ' + activeP);
-  console.log('Ilosc items wszystkich: ' + pageRows);
-  console.log('Ilosc stron: ' + pagesT);
-  console.log('Pokazywanie wynikow od ' + distance.from + ' do ' + distance.to);
-  console.log('=====');
-};
-
-// wyswietlanieTestowe(
-//   activePage.value,
-//   page.value.rows,
-//   pagesTotal.value,
-//   distance.value,
-//   itemsPerPage.value
-// );
-
-watch(
-  () => activePage.value,
-  () => {
-    // console.log('Rodzic aktywna: ' + activePage.value);
-
-    itemsActive.value = getPageItems(
-      Object.entries(carsApi.value),
-      activePage.value,
-      itemsPerPage.value
-    );
-
-    const obj = getDistance(activePage.value, itemsPerPage.value);
-    distance.value.from = obj.f;
-    distance.value.to = obj.t;
-  }
-);
-
-const nazwaFunkcji = (pageNumber) => {
-  // console.log('test', pageNumber);
-  activePage.value = pageNumber;
-};
-</script>
-<template>
-  <div class="w-full">
-    <CarApicard v-for="car in itemsActive" :key="car.id" :car="car" />
-    <CarPagination
-      :page="page"
-      :info="info"
-      :key="page.rows"
-      :currPage="activePage"
-      :distance="distance"
-      @nazwaEmita="(pageN) => nazwaFunkcji(pageN)" />
-=======
 </script>
 <template>
   <div class="w-full">
     <CarApicard v-for="car in first" :key="car.id" :car="car" />
     <CarPagination :page="page" :info="info" :key="page.rows" />
->>>>>>> 94022913b46ad916255fe34e4266142386553d55
   </div>
 </template>
