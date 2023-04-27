@@ -38,9 +38,56 @@ const itemsActive = ref(
 const info = ref({
   i: pagesTotal.value,
 });
+
+const wyswietlanieTestowe = (activeP, pageRows, pagesT, distance, itemsPP) => {
+  console.log('=====');
+  getDistance(activeP, itemsPP);
+  console.log('Aktywna strona: ' + activeP);
+  console.log('Ilosc items wszystkich: ' + pageRows);
+  console.log('Ilosc stron: ' + pagesT);
+  console.log('Pokazywanie wynikow od ' + distance.from + ' do ' + distance.to);
+  console.log('=====');
+};
+
+// wyswietlanieTestowe(
+//   activePage.value,
+//   page.value.rows,
+//   pagesTotal.value,
+//   distance.value,
+//   itemsPerPage.value
+// );
+
+watch(
+  () => activePage.value,
+  () => {
+    // console.log('Rodzic aktywna: ' + activePage.value);
+
+    itemsActive.value = getPageItems(
+      Object.entries(carsApi.value),
+      activePage.value,
+      itemsPerPage.value
+    );
+
+    const obj = getDistance(activePage.value, itemsPerPage.value);
+    distance.value.from = obj.f;
+    distance.value.to = obj.t;
+  }
+);
+
+const nazwaFunkcji = (pageNumber) => {
+  // console.log('test', pageNumber);
+  activePage.value = pageNumber;
+};
 </script>
 <template>
   <div class="w-full">
-    <CarApicard v-for="car in carsApi.cars" :key="car.id" :car="car" />
+    <CarApicard v-for="car in itemsActive" :key="car.id" :car="car" />
+    <CarPagination
+      :page="page"
+      :info="info"
+      :key="page.rows"
+      :currPage="activePage"
+      :distance="distance"
+      @nazwaEmita="(pageN) => nazwaFunkcji(pageN)" />
   </div>
 </template>

@@ -7,10 +7,15 @@ const props = defineProps({
   currPage: { type: Number, required: true },
 });
 const emit = defineEmits(['nazwaEmita']);
-
 function buttonClick(pageNumber) {
   emit('nazwaEmita', pageNumber);
 }
+// watch(
+//   () => props.currPage.value,
+//   () => {
+//     console.log('Dziecko aktywna: ' + props.currPage.value);
+//   }
+// );
 </script>
 <template>
   <div
