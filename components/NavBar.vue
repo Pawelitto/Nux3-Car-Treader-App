@@ -1,5 +1,6 @@
 <script setup>
 import heartOutline from '@/assets/heartOutline.png';
+import { Icon } from '@iconify/vue';
 import { useLikedCar } from '@/store/store';
 
 const likesStore = useLikedCar();
@@ -14,26 +15,24 @@ const likesStore = useLikedCar();
         class="serce absolute top-2/4 left-2/4 text-1xl font-mono"
         to="/car/fav">
         <Transition mode="out-in">
-          <span class="text-red-600" :key="likesStore.totalLikes">
+          <span class="text-red-600 font-mono" :key="likesStore.totalLikes">
             {{ likesStore.totalLikes }}
           </span>
         </Transition>
       </NuxtLink>
-      <img
-        :src="heartOutline"
-        class="w-10 cursor-pointer"
-        alt="serce_licznik"
+      <Icon
+        class="cursor-pointer"
+        icon="mdi:cards-heart-outline"
+        width="45"
+        height="45"
         @click="navigateTo('/car/fav')" />
-      <!-- <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="1.5em"
-        height="1.5em"
-        viewBox="0 0 16 16">
-        <path
-          fill="currentColor"
-          d="M8 7.83c-3.08 0-5.59 2.17-5.59 4.84V16h1.27v-3.33c0-2 1.94-3.57 4.32-3.57s4.32 1.6 4.32 3.57V16h1.27v-3.33c0-2.67-2.51-4.84-5.59-4.84zm.1-1.22a3.22 3.22 0 0 0 3.1-3.31A3.21 3.21 0 0 0 8.1 0A3.21 3.21 0 0 0 5 3.3a3.22 3.22 0 0 0 3.1 3.31zm0-5.32a1.92 1.92 0 0 1 1.81 2a1.93 1.93 0 0 1-1.81 2a1.93 1.93 0 0 1-1.8-2a1.92 1.92 0 0 1 1.8-2z"></path>
-      </svg> -->
     </div>
+    <Icon
+      class="absolute right-20 cursor-pointer"
+      icon="mdi:user-outline"
+      width="45"
+      height="45"
+      @click="navigateTo('/login')" />
   </header>
 </template>
 <style scoped>

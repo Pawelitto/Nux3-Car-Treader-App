@@ -1,4 +1,6 @@
 <script setup>
+import { MotionPlugin } from '@vueuse/motion';
+
 definePageMeta({
   layout: 'custom',
 });
@@ -27,3 +29,4 @@ definePageMeta({
     </div>
   </div>
 </template>
+<style scoped></style>
